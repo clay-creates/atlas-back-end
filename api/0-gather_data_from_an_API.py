@@ -23,7 +23,7 @@ def employee_todo(employee_id):
     total_done = len(completed_todos)
 
     print("Employee {0} is done with tasks({1}/{2}):"
-           .format(employee_name, total_done, total_todo))
+          .format(employee_name, total_done, total_todo))
     for todo in completed_todos:
         print(f"\t {todo}")
 
