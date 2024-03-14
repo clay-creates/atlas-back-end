@@ -14,14 +14,14 @@ def employee_todo(employee_id):
 
     # Get request information from API
     employee_info = requests.get(employee_ext).json()
-    employee_name = employee_info.get('name')
+    username = employee_info.get('username')
     todo_list = requests.get(f"{todo_ext}?userId={employee_id}").json()
 
     # Prepare data for csv [[List of Lists]]
     csv_data = [[]]
     for item in todo_list:
         csv_data.append(
-            [employee_id, employee_name, item["completed"], item["title"]])
+            [employee_id, username, item["completed"], item["title"]])
 
     # Write csv_data to .csv file
     with open(f"{employee_id}.csv", mode='w', newline='') as file:
