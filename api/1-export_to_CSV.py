@@ -18,7 +18,7 @@ def employee_todo(employee_id):
     todo_list = requests.get(f"{todo_ext}?userId={employee_id}").json()
 
     # Prepare data for csv [[List of Lists]]
-    csv_data = [['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']]
+    csv_data = [[]]
     for item in todo_list:
         csv_data.append(
             [employee_id, employee_name, item["completed"], item["title"]])
