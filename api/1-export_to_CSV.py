@@ -20,7 +20,8 @@ def employee_todo(employee_id):
     # Prepare data for csv [[List of Lists]]
     csv_data = [['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']]
     for item in todo_list:
-        csv_data.append([employee_id, employee_name, item["completed"], item["title"]])
+        csv_data.append(
+            [employee_id, employee_name, item["completed"], item["title"]])
 
     # Write csv_data to .csv file
     with open(f"{employee_id}.csv", mode='w', newline='') as file:
@@ -28,7 +29,8 @@ def employee_todo(employee_id):
         writer.writerows(csv_data)
 
     # Print confirmation
-    print(f"Data for employee {employee_id} has been exported to {employee_id}.csv")
+    print("Data for employee {} has been exported to {}.csv"
+          .format(employee_id, employee_id))
 
 
 if __name__ == "__main__":
