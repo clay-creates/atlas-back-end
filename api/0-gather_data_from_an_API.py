@@ -12,7 +12,7 @@ def employee_todo(employee_id):
 
     employee_info = requests.get(employee_ext).json()
     employee_name = employee_info.get('name')
-    todo_list = requests.get(f"{todo_ext}{employee_id}")
+    todo_list = requests.get(f"{todo_ext}?userId={employee_id}").json()
 
     completed_todos = []
     for item in todo_list:
