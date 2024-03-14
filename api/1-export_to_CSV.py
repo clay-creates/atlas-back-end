@@ -28,10 +28,6 @@ def employee_todo(employee_id):
         writer = csv.writer(file)
         writer.writerows(csv_data)
 
-    # Print confirmation
-    print("Data for employee {} has been exported to {}.csv"
-          .format(employee_id, employee_id))
-
 
 if __name__ == "__main__":
     employee_todo(int(sys.argv[1]))
