@@ -25,7 +25,7 @@ def employee_todo(employee_id):
 
     # Write csv_data to .csv file
     with open(f"{employee_id}.csv", mode='w', newline='') as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         writer.writerows(csv_data)
 
 
