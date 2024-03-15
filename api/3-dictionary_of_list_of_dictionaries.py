@@ -13,6 +13,7 @@ def fetch_all_employees():
     # Return get request
     return requests.get(employee_ext).json()
 
+
 def employee_todo(employee_id):
     """ Fetches employee todos from employee_id """
     # Set up API connection
@@ -36,6 +37,7 @@ def employee_todo(employee_id):
 
     # Return JSON structure
     return {str(employee_id): todo_data}
+
 
 def export_to_json(data):
     """ Exports data to a JSON file """
