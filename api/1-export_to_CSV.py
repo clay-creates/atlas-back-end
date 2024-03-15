@@ -18,15 +18,17 @@ def employee_todo(employee_id):
     todo_list = requests.get(f"{todo_ext}?userId={employee_id}").json()
 
     # Prepare data for csv [[List of Lists]]
-    csv_data = [[]]
-    for item in todo_list:
-        csv_data.append(
-            [employee_id, username, item["completed"], item["title"]])
+    # csv_data = [[]]
+    # for item in todo_list:
+    #     csv_data.append(
+    #         [employee_id, username, item["completed"], item["title"]])
 
     # Write csv_data to .csv file
     with open(f"{employee_id}.csv", mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerows(csv_data)
+        for item in todo_list:
+            writer.writerows([employee_id, username,
+                              item["completed"], item["title"]])
 
 
 if __name__ == "__main__":
