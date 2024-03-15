@@ -18,7 +18,7 @@ def employee_todo(employee_id):
     todo_list = requests.get(f"{todo_ext}?userId={employee_id}").json()
 
     # Prepare data for JSON
-    todo_data =[]
+    todo_data = []
     for item in todo_list:
         todo_data.append({
             "task": item["title"],
