@@ -25,7 +25,7 @@ def employee_todo(employee_id):
 
     # Write csv_data to .csv file
     with open(f"{employee_id}.csv", mode='w', newline='') as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for item in todo_list:
             writer.writerows([employee_id, username,
                               item["completed"], item["title"]])
