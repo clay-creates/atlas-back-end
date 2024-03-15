@@ -6,7 +6,7 @@ import sys
 
 
 def employee_todo(employee_id):
-    """ Function works with employee todo's, shows total todo and completed"""
+    """ Function works with employee todo's """
     # Set up API connection
     site_url = "https://jsonplaceholder.typicode.com/"
     employee_ext = f"{site_url}/users/{employee_id}"
